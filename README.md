@@ -15,27 +15,6 @@ This repository demonstrates the use of deep learning models (CNN, U-Net, GAN) f
    git clone https://github.com/sajjadhussa1n/deep-learning-radio-channel-modeling.git
    cd deep-learning-radio-channel-modeling
 
-## Development of a UNet Model for Pathloss prediction in urban environments
-
-My first attempt includes developing a UNet mdoel for pathloss prediction using geometric/geographic/geospatial features of the urban environments as input to predict the pathloss. 
-
-I generated dataset of pathloss in three different environments, two in Munich (referred as Munich-01 and Munich-02) and one in London. Ray-tracing models, developed in my previous research [references here] are used to simulate the environment. Simulation parameters included:
-
-- Carrier Frequency = 28 GHz
-- Transmitter = UAV-based dipole antenna at heights 25m, 35m and 45m 
-- Receivers = Grid of receivers across the radio environment each of height 1.5m
-- Rays contributions included = LOS ray, 1st order wall reflections, Diffused scattering from walls [reference here], ground reflections
-- Emprirical Model = For receivers that do not receive any of the above ray, we used 3GPP model for pathloss computation.
-- Building Penetration Loss = Outdoor-to-Indoor building penetration loss also incorporated for pathloss computation for complete pathloss values across the environment. 
-
-The size of receiver grids across different environments are as follows:
-- Munich-01: 205x300 
-- Munich-02: 190x300
-- London: 190x320
-Please note that these values were chosen differently due to some other reasons. Later, I realized that I should have choosen same grid size for all the environments so that it would have been easier to generate dataset. 
-
-Apart from computing pathloss, I also compute 13 geometrical parameters for each receiver in the receiver grid. These parameters were used in ML models that were used in my previous research. Interested readers can read the paper here [reference].
-
 # 📡 UNet Model for Pathloss Prediction in Urban Environments (Version 0)
 
 Welcome to my exciting journey of building a **UNet model** for **pathloss prediction** in urban environments! This repository documents my first attempt at leveraging the power of deep learning to predict radio wave propagation using the geometric, geographic, and geospatial features of city landscapes. 🏙️📶
